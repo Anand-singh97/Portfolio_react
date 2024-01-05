@@ -1,14 +1,10 @@
-import React, { useState } from "react";
-import arrayDestruct from "../assets/portfolio/arrayDestruct.jpg";
+// import React, { useState } from "react";
 import blogAppImage from "../assets/portfolio/blogAppImage.png";
 import clinicalNotesAppImage from "../assets/portfolio/ClinicalnotesAppImage.jpg";
-import reactParallax from "../assets/portfolio/reactParallax.jpg";
-import reactSmooth from "../assets/portfolio/reactSmooth.jpg";
-import reactWeather from "../assets/portfolio/reactWeather.jpg";
+import ticTac from "../assets/portfolio/tic_tac.jpg";
+import gameImage from '../assets/portfolio/demon_slayer.png';
 
 const Projects = () => {
-  const [projectDescription, setProjectDescription] = useState(null);
-  const [details, setDetails] = useState("");
 
   const projects = [
     {
@@ -27,19 +23,17 @@ const Projects = () => {
       description:
         "The Clinical Data Management Application, built using C# in WinForms, is a robust tool designed for healthcare professionals to efficiently manage and extract crucial patient information from clinical notes. It simplifies patient data recording, offers automated extraction of vital medical data, ensures secure storage, and facilitates easy retrieval and report generation for streamlined patient care.",
     },
-    { id: 3, src: reactParallax },
-    { id: 4, src: reactSmooth },
-    { id: 5, src: reactWeather },
-    { id: 6, src: arrayDestruct },
+    { id: 3, src: gameImage,
+      title: "RPG game",
+      code: "https://github.com/Anand-singh97/GameProject",
+      description:
+        "This game app is developed using MonoGame and C#, implementing an engaging gameplay experience where the hero shoots powerballs to destroy enemies, earning 10 points for each successful kill. The game employs Object-Oriented Programming (OOP) principles to enhance its structure and functionality.", },
+    { id: 4, src: ticTac,
+      title: "Tic Tac Toe game",
+      code: "https://github.com/Anand-singh97/Tic_Tac_Toe_App/tree/main",
+      description:
+        "The 3x3 Tic-Tac-Toe app is a classic and engaging desktop game developed using C# and WinForms. This user-friendly application provides an interactive and entertaining platform for players to enjoy the timeless game of Tic-Tac-Toe, C# Programming Language**: The core logic and functionality of the game are implemented using C#.The game's graphical user interface is built using WinForms." },
   ];
-
-  const showDescription = (id) => {
-    setProjectDescription(id);
-  };
-
-  const hideDescription = () => {
-    setProjectDescription(null);
-  };
 
   return (
     <div
@@ -52,48 +46,43 @@ const Projects = () => {
         </p>
       </div>
 
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-1 gap-8 px-5 md:px-[8px] sm:px-[8rem]">
-        {projects.map((element) => (
-          <div
-            key={element.id}
-            className="shadow-md shadow-blue-100 rounded-lg overflow-hidden"
-          >
-            <div
-              className="relative overflow-hidden"
-              onMouseEnter={() => showDescription(element.id)}
-              onMouseLeave={hideDescription}
-            >
-              <img
-                className="rounded-md w-full h-[300px]"
-                src={element.src}
-                alt=""
-              />
-              {projectDescription === element.id && (
-                <div className="backdrop-filter backdrop-blur-lg top-0 p-2 w-full duration-300 transition-all h-full absolute bg-orange-100 bg-opacity-[0.8]">
-                  <div className="text-center">
-                    <h1 className="text-lg font-bold">{details.title}</h1>
-                  </div>
-                  <div className="flex justify-center items-center text-[1rem]">
-                    <p className="text-center font-semibold">
-                      {element.description}
-                    </p>
-                  </div>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-5 gap-5 px-5 md:px-[8px] sm:px-[8rem]">
+        {projects.map((element) => {
+          return (
+            <div className="bg-blue-100 pb-2 rounded-xl">
+              <div>
+                <div className="flex justify-center">
+                  <img
+                    alt=""
+                    className="h-[250px] w-full rounded-xl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    src={element.src}
+                  />
                 </div>
-              )}
+                <div className="flex h-[17rem] overflow-hidden md:h-[18rem] lg:h-[15rem] px-2 flex-col items-center">
+                  <h2 className="py-3 text-[1.3rem] font-bold">
+                    {element.title}
+                  </h2>
+                  <p className="bg-blue-100 rounded-lg text-center font-[600]">
+                    {element.description}
+                  </p>
+                </div>
+                <div className="flex lg:mt-5 justify-center">
+                  <a
+                    className=" font-semibold  py-2 border-2 bg-blue-300 rounded-lg w-[10rem] text-center"
+                    type="button"
+                    target="_blank"
+                    rel="noreferrer"
+                    href={element.code}
+                  >
+                    Code
+                  </a>
+                </div>
+              </div>
             </div>
-
-            <div className="flex justify-center items-center">
-              <a
-                href= {element.code}
-                className="font-semibold text-center bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer rounded-lg w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Code
-              </a>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

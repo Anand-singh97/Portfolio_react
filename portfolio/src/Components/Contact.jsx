@@ -6,7 +6,7 @@ const Contact = () => {
       <div className="flex flex-col justify-center text-center max-w-screen-lg mx-auto">
         <div className="pb-8 flex flex-col gap-5 items-center">
           <p className="text-4xl font-bold inline border-b-2 pb-1 text-gray-800 border-gray-700 w-fit">Contact</p>
-          <p className="text-gray-900 font-semibold">Please contact me directly at <a className=" underline text-blue-400" href="mailto:Asingh4337@conestogac.on.ca">Asingh4337@conestogac.on.ca</a> or through this form.</p>
+          <p className="text-gray-900 font-semibold">Please contact me directly at <a className=" underline text-blue-400" href="mailto:pb11aps97@gmail.com">pb11aps97@gmail.com</a> or through this form.</p>
         </div>
 
         <div className="flex justify-center">

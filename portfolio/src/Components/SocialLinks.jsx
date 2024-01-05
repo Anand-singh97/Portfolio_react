@@ -22,7 +22,7 @@ const SocialLinks = () => {
         {
             id:3,
             child:(<> Mail <HiOutlineMail size={30}/> </>),
-            href:'mailto:Asingh4337@conestogac.on.ca'      
+            href:'mailto:pb11aps97@gmail.com'      
         }
     ];
 

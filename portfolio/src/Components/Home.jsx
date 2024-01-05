@@ -1,7 +1,7 @@
 import React from 'react';
 import heroImage from '../assets/portfolio/4428861.jpg';
 import {MdKeyboardArrowRight} from 'react-icons/md';
-import resume from '../assets/portfolio/AnandSinghResume.pdf';
+import resume from '../assets/portfolio/ResumeFinal.pdf';
 const Home = ({nav}) => {
 
   return (
