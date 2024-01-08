@@ -2,15 +2,16 @@
 import blogAppImage from "../assets/portfolio/blogAppImage.png";
 import clinicalNotesAppImage from "../assets/portfolio/ClinicalnotesAppImage.jpg";
 import ticTac from "../assets/portfolio/tic_tac.jpg";
-import gameImage from '../assets/portfolio/demon_slayer.png';
-
+import gameImage from "../assets/portfolio/demon_slayer.png";
+import { FaGithub } from "react-icons/fa";
+import { CgWebsite } from "react-icons/cg";
 const Projects = () => {
-
   const projects = [
     {
       id: 1,
       src: blogAppImage,
       title: "Blog App",
+      liveUrl: "https://super-scone-037dbb.netlify.app/login",
       code: "https://github.com/Anand-singh97/BlogApp_MERN",
       description:
         "This MERN stack Blog Application incorporates user authentication using Google sign-in, ensuring secure JWT token storage. It enables users to create and edit blogs, including image uploads, titles, summaries, and content. Additionally, it employs self-signed HTTPS certificates for secure communication and MongoDB Atlas for database management.",
@@ -23,16 +24,22 @@ const Projects = () => {
       description:
         "The Clinical Data Management Application, built using C# in WinForms, is a robust tool designed for healthcare professionals to efficiently manage and extract crucial patient information from clinical notes. It simplifies patient data recording, offers automated extraction of vital medical data, ensures secure storage, and facilitates easy retrieval and report generation for streamlined patient care.",
     },
-    { id: 3, src: gameImage,
+    {
+      id: 3,
+      src: gameImage,
       title: "RPG game",
       code: "https://github.com/Anand-singh97/GameProject",
       description:
-        "This game app is developed using MonoGame and C#, implementing an engaging gameplay experience where the hero shoots powerballs to destroy enemies, earning 10 points for each successful kill. The game employs Object-Oriented Programming (OOP) principles to enhance its structure and functionality.", },
-    { id: 4, src: ticTac,
+        "This game app is developed using MonoGame and C#, implementing an engaging gameplay experience where the hero shoots powerballs to destroy enemies, earning 10 points for each successful kill. The game employs Object-Oriented Programming (OOP) principles to enhance its structure and functionality.",
+    },
+    {
+      id: 4,
+      src: ticTac,
       title: "Tic Tac Toe game",
       code: "https://github.com/Anand-singh97/Tic_Tac_Toe_App/tree/main",
       description:
-        "The 3x3 Tic-Tac-Toe app is a classic and engaging desktop game developed using C# and WinForms. This user-friendly application provides an interactive and entertaining platform for players to enjoy the timeless game of Tic-Tac-Toe, C# Programming Language**: The core logic and functionality of the game are implemented using C#.The game's graphical user interface is built using WinForms." },
+        "The 3x3 Tic-Tac-Toe app is a classic and engaging desktop game developed using C# and WinForms. This user-friendly application provides an interactive and entertaining platform for players to enjoy the timeless game of Tic-Tac-Toe, C# Programming Language**: The core logic and functionality of the game are implemented using C#.The game's graphical user interface is built using WinForms.",
+    },
   ];
 
   return (
@@ -69,15 +76,34 @@ const Projects = () => {
                   </p>
                 </div>
                 <div className="flex lg:mt-5 justify-center">
-                  <a
-                    className=" font-semibold  py-2 border-2 bg-blue-300 rounded-lg w-[10rem] text-center"
-                    type="button"
-                    target="_blank"
-                    rel="noreferrer"
-                    href={element.code}
-                  >
-                    Code
-                  </a>
+                  <div className="flex flex-col items-center md:flex-row md:gap-3">
+                    <a href={element.code} rel="noreferrer" target="_blank">
+                      <button
+                        className="group text-white w-fit px-6 py-3 my-2 gap-2 flex items-center rounded-md 
+                            bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer hover:scale-105 duration-300"
+                      >
+                        <FaGithub
+                          className="cursor-pointer hover:scale-110 duration-75"
+                          size={25}
+                        />
+                        <p>View Code</p>
+                      </button>
+                    </a>
+                    {element.liveUrl ? (
+                      <a href={element.liveUrl} rel="noreferrer" target="_blank">
+                        <button
+                          className="group text-white w-fit px-6 py-3 my-2 gap-2 flex items-center rounded-md 
+                            bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer hover:scale-105 duration-300"
+                        >
+                          <CgWebsite/>
+                          <p>Live Demo</p>
+                        </button>
+                      </a>
+                      
+                    ) : (
+                      <></>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
