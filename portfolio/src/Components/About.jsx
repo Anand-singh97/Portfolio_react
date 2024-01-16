@@ -30,7 +30,7 @@ const About = () => {
                 <p className=" leading-[1.2rem] pb-3">Advance Diploma in Computer Programming & Analysis</p>
                 <p className=" pb-3">Conestoga College, Waterloo, ON </p>
                 <p className="pb-3">Expected Graduation in 2026</p>
-                <p>GPA: 3.98/4</p>
+                <p>GPA: 3.95/4</p>
               </div>
             </div>
             
