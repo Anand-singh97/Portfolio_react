@@ -55,7 +55,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-5 justify-center items-center">
+    <div name="Projects" className="flex flex-col gap-5 justify-center items-center">
       <p className="text-4xl font-bold inline border-b-2 pb-1  border-gray-500">
         Projects
       </p>
