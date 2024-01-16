@@ -1,36 +1,49 @@
 // import React, { useState } from "react";
 import blogAppImage from "../assets/portfolio/blogAppImage.png";
 import clinicalNotesAppImage from "../assets/portfolio/ClinicalnotesAppImage.jpg";
+import eCommerceAppImage from '../assets/portfolio/EcommerceImage.png';
 import ticTac from "../assets/portfolio/tic_tac.jpg";
 import gameImage from "../assets/portfolio/demon_slayer.png";
 import { FaGithub } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
+import MediaCard from "./MediaCard";
+
 const Projects = () => {
   const projects = [
     {
       id: 1,
+      src: eCommerceAppImage,
+      title: "E-commerce App",
+      liveUrl:"https://genuine-dusk-3b82c7.netlify.app",
+      code: "https://github.com/Anand-singh97/Ecommerce-App",
+      description:
+      [
+        {heading:'Technology Stack:', explained:'MERN (MongoDB, Express.js, React, Node.js)'},
+        {heading:'Description:', explained:'The MERN stack drives this e-commerce app, offering categorized Men, Women, and Kids sections. Users explore detailed product info, select sizes before adding to the cart, and contribute reviews. The admin panel empowers administrators to effortlessly add or remove products, ensuring dynamic content updates across categories, The app leverages Cloudinary for image storage, enhancing performance and scalability. Logged-in users enjoy a seamless shopping experience with a smart cart that securely stores contents. Strong authentication safeguards user data, incorporating encrypted passwords. MongoDB optimally manages data retrieval and storage, supporting a robust and efficient platform.'}
+      ]
+    },
+    {
+      id: 2,
       src: blogAppImage,
       title: "Blog App",
       liveUrl: "https://super-scone-037dbb.netlify.app/login",
       code: "https://github.com/Anand-singh97/BlogApp_MERN",
       description:
-        "This MERN stack Blog Application incorporates user authentication using Google sign-in, ensuring secure JWT token storage. It enables users to create and edit blogs, including image uploads, titles, summaries, and content. Additionally, it employs self-signed HTTPS certificates for secure communication and MongoDB Atlas for database management.",
+      [
+        {heading:'Technology Stack:', explained:'MERN (MongoDB, Express.js, React, Node.js)'},
+        {heading:'Description:', explained:'This blog app prioritizes user security and ease of use. Users are required to log in to access the app, and a JWT token is sent securely in a cookie. Once authenticated, users can create blogs by crafting summaries, adding images, and writing titles and descriptions. All data is efficiently stored in MongoDB, ensuring seamless content management. The app leverages Cloudinary for image storage, enhancing performance and scalability. Users have the privilege to edit their blogs, with stringent validation to modify only the content they have created. This blog app embodies a secure, user-centric experience with robust data handling capabilities.'}
+      ]
     },
     {
-      id: 2,
+      id: 3,
       src: clinicalNotesAppImage,
       title: "Clinical Notes App",
       code: "https://github.com/Anand-singh97/Clinical-Notes-app",
       description:
-        "The Clinical Data Management Application, built using C# in WinForms, is a robust tool designed for healthcare professionals to efficiently manage and extract crucial patient information from clinical notes. It simplifies patient data recording, offers automated extraction of vital medical data, ensures secure storage, and facilitates easy retrieval and report generation for streamlined patient care.",
-    },
-    {
-      id: 3,
-      src: gameImage,
-      title: "RPG game",
-      code: "https://github.com/Anand-singh97/GameProject",
-      description:
-        "This game app is developed using MonoGame and C#, implementing an engaging gameplay experience where the hero shoots powerballs to destroy enemies, earning 10 points for each successful kill. The game employs Object-Oriented Programming (OOP) principles to enhance its structure and functionality.",
+      [
+        {heading:'Technology Stack:', explained:'Win Forms and C#'},
+        {heading:'Description', explained:'This clinical notes app streamlines patient data management. Users can effortlessly add and edit patient details, including names, dates of birth, health issues, and appointments, all stored locally in a text file. The user-friendly interface allows easy access to patient information by clicking on their name, providing a quick and efficient means to extract the relevant details. The app simplifies the process of recording and retrieving clinical notes, enhancing the overall workflow for healthcare professionals.'}
+      ]
     },
     {
       id: 4,
@@ -38,78 +51,28 @@ const Projects = () => {
       title: "Tic Tac Toe game",
       code: "https://github.com/Anand-singh97/Tic_Tac_Toe_App/tree/main",
       description:
-        "The 3x3 Tic-Tac-Toe app is a classic and engaging desktop game developed using C# and WinForms. This user-friendly application provides an interactive and entertaining platform for players to enjoy the timeless game of Tic-Tac-Toe, C# Programming Language**: The core logic and functionality of the game are implemented using C#.The game's graphical user interface is built using WinForms.",
+      [
+        {heading:'Technology Stack:', explained:'Win Forms and C#'},
+        {heading:'Technology Stack:', explained:'This Tic Tac Toe game brings the classic gaming experience to your desktop. Users can enjoy the timeless challenge of Xs and Os in a user-friendly interface. The game provides a two-player mode for head-to-head matches, where players take turns marking the grid. The application ensures an engaging and interactive experience, making it an ideal choice for leisure and entertainment.'},
+      ]
     },
   ];
 
   return (
-    <div
-      name="Projects"
-      className="w-full relative text-gray-700 h-fit mb-[9rem]"
-    >
-      <div className="pb-8 flex flex-col justify-center items-center">
-        <p className="text-4xl font-bold inline border-b-2 pb-1 border-gray-500">
-          Projects
-        </p>
-      </div>
-
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-5 gap-5 px-5 md:px-[8px] sm:px-[8rem]">
-        {projects.map((element) => {
+    <div className="flex flex-col gap-5 justify-center items-center">
+      <p className="text-4xl font-bold inline border-b-2 pb-1  border-gray-500">
+        Projects
+      </p>
+      <div className="grid grid-cols-1 gap-[2rem] md:grid-cols-2 lg:grid-cols-3 justify-items-center items-center">
+        {projects.map(({ id, title, src, liveUrl, code, description }) => {
           return (
-            <div className="bg-blue-100 pb-2 rounded-xl">
-              <div>
-                <div className="flex justify-center">
-                  <img
-                    alt=""
-                    className="h-[250px] w-full rounded-xl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    src={element.src}
-                  />
-                </div>
-                <div className="flex h-[17rem] overflow-hidden md:h-[18rem] lg:h-[15rem] px-2 flex-col items-center">
-                  <h2 className="py-3 text-[1.3rem] font-bold">
-                    {element.title}
-                  </h2>
-                  <p className="bg-blue-100 rounded-lg text-center font-[600]">
-                    {element.description}
-                  </p>
-                </div>
-                <div className="flex lg:mt-5 justify-center">
-                  <div className="flex flex-col items-center md:flex-row md:gap-3">
-                    <a href={element.code} rel="noreferrer" target="_blank">
-                      <button
-                        className="group text-white w-fit px-6 py-3 my-2 gap-2 flex items-center rounded-md 
-                            bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer hover:scale-105 duration-300"
-                      >
-                        <FaGithub
-                          className="cursor-pointer hover:scale-110 duration-75"
-                          size={25}
-                        />
-                        <p>View Code</p>
-                      </button>
-                    </a>
-                    {element.liveUrl ? (
-                      <a href={element.liveUrl} rel="noreferrer" target="_blank">
-                        <button
-                          className="group text-white w-fit px-6 py-3 my-2 gap-2 flex items-center rounded-md 
-                            bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer hover:scale-105 duration-300"
-                        >
-                          <CgWebsite/>
-                          <p>Live Demo</p>
-                        </button>
-                      </a>
-                      
-                    ) : (
-                      <></>
-                    )}
-                  </div>
-                </div>
-              </div>
+            <div key={id}>
+              <MediaCard title = {title} src = {src} liveUrl = {liveUrl} code = {code} description = {description}/>
             </div>
           );
         })}
       </div>
+      
     </div>
   );
 };
