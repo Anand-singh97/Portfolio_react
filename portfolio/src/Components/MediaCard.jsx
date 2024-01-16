@@ -13,7 +13,12 @@ export default function MediaCard(props) {
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia sx={{ height: 140 }} image={src} title="green iguana" />
         <CardContent>
-          <Typography  className=" border-b-[1px]" gutterBottom variant="h5" component="div">
+          <Typography
+            className=" border-b-[1px]"
+            gutterBottom
+            variant="h5"
+            component="div"
+          >
             {title}
           </Typography>
           <Typography
@@ -34,9 +39,12 @@ export default function MediaCard(props) {
         <CardActions>
           {liveUrl ? (
             <div>
-              <div className="inline">
+              <div
+                className="inline mr-3 px-6 py-3 rounded-md 
+                        bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+              >
                 <Button
-                  className=""
+                  style={{ color: "white" }}
                   href={liveUrl}
                   rel="noreferrer"
                   target="_blank"
@@ -45,8 +53,12 @@ export default function MediaCard(props) {
                   View Live
                 </Button>
               </div>
-              <div  className="inline">
+              <div
+                className="inline mr-3 px-6 py-3 rounded-md 
+                        bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+              >
                 <Button
+                  style={{ color: "white" }}
                   href={code}
                   rel="noreferrer"
                   target="_blank"
@@ -57,12 +69,22 @@ export default function MediaCard(props) {
               </div>
             </div>
           ) : (
-            <div className="inline">
-              <Button size="medium">Code</Button>
+            <div
+              className="inline px-6 py-1 rounded-md 
+                        bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+            >
+              <Button
+                style={{ color: "white" }}
+                href={code}
+                rel="noreferrer"
+                target="_blank"
+                size="medium"
+              >
+                Code
+              </Button>
             </div>
           )}
         </CardActions>
-        
       </Card>
     </div>
   );

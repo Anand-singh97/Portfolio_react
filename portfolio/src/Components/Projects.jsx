@@ -1,11 +1,7 @@
-// import React, { useState } from "react";
 import blogAppImage from "../assets/portfolio/blogAppImage.png";
 import clinicalNotesAppImage from "../assets/portfolio/ClinicalnotesAppImage.jpg";
 import eCommerceAppImage from '../assets/portfolio/EcommerceImage.png';
 import ticTac from "../assets/portfolio/tic_tac.jpg";
-import gameImage from "../assets/portfolio/demon_slayer.png";
-import { FaGithub } from "react-icons/fa";
-import { CgWebsite } from "react-icons/cg";
 import MediaCard from "./MediaCard";
 
 const Projects = () => {
